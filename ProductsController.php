@@ -41,9 +41,8 @@ class ProductsController extends Controller
     {
         $formInput=$request->except('image');
 
-        $equipment->name = Input::get('name');
-        $equipment->manufacture =  Input::get('manufacture');
-        
+       
+
 
 
 
@@ -62,6 +61,7 @@ class ProductsController extends Controller
             $formInput['image']=$imageName;
         }
 
+        dd($formInput);
         Product::create($formInput);
         return redirect()->route('product.index');
     }
